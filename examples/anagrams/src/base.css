@@ -1,0 +1,38 @@
+#app-view {
+    margin-top: 50px;
+}
+
+.main {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+#letter-pool {
+    border: 1px solid black;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+#word-input-form {
+    margin-top: 10px;
+}
+
+#word-stash {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+#word-stash-title {
+    text-align: center;
+}
+
+.word-stash-entry {
+    text-transform: uppercase;
+    text-align: center;
+}
