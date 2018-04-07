@@ -2,6 +2,7 @@ import Immutable from 'immutable';
 import {ReduceStore} from 'flux/utils';
 import {ActionTypes} from './AnagramsActions';
 import AnagramsDispatcher from './AnagramsDispatcher';
+import LetterPoolStore from './LetterPoolStore';
 
 class WordStashStore extends ReduceStore {
     constructor() {
@@ -18,7 +19,11 @@ class WordStashStore extends ReduceStore {
                 if (!action.word) {
                     return state;
                 }
-                return state.push(action.word);
+                if (LetterPoolStore.canMakeWord(action.word)) {
+                    console.log('can');
+                    return state.push(action.word);
+                }
+                return state;
                 
             // case TodoActionTypes.ADD_TODO:
             //     if (!action.text) {

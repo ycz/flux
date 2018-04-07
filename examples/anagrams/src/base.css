@@ -12,9 +12,24 @@
 }
 
 #letter-pool {
+    /* border: 1px solid black;
+    border-radius: 5px; */
+    min-height: 60px;
+}
+
+.letter-tile {
+    float: left;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 2px;
     border: 1px solid black;
-    border-radius: 5px;
-    min-height: 100px;
+    border-radius: 3px;
+    background-color: tan;
+    font-weight: bold;
 }
 
 #word-input-form {

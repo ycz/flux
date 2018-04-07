@@ -38,15 +38,20 @@ function Main(props) {
 function LetterPool(props) {
     return (
         <div id="letter-pool">
-            {props.letterPool.map((letter, index) => <span key={index}>{letter}</span>)}
+            {props.letterPool.map((letter, index) => LetterTile(letter, index))}
         </div>
     );
+}
+
+function LetterTile(letter, index) {
+    return (
+        <span key={index} className="letter-tile">{letter}</span>
+    )
 }
 
 class WordInput extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props.anagramsState);
         this.state = {value: ''};
 
         this.handleChange = this.handleChange.bind(this);
@@ -58,7 +63,6 @@ class WordInput extends React.Component {
             this.props.onSubmitWord(this.state.value);
             this.setState({ value: '' });
         } else {
-            console.log("Pulling");
             this.props.onPullTile();
         }
         event.preventDefault();
@@ -85,11 +89,11 @@ function WordStash(props) {
     let wordStash = props.wordStash;
     return <div id="word-stash">
         <h4 id="word-stash-title">Stash</h4>
-        {wordStash.reverse().map((word, index) => StashEntry(index, word))}
+        {wordStash.reverse().map((word, index) => StashEntry(word, index))}
     </div>
 }
 
-function StashEntry(index, word) {
+function StashEntry(word, index) {
     return <div className="word-stash-entry" key={index}>{word}</div>
 }
 
